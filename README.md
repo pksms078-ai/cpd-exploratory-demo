@@ -30,3 +30,12 @@ predictions = model.predict(sequences)
 
 sim = MolecularSimulation()
 result = sim.run("example.pdb")
+
+---
+
+# 🔹 STEP 6: `requirements.txt`
+
+```txt
+numpy
+scikit-learn
+
