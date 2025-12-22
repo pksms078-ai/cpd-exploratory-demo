@@ -1,0 +1,8 @@
+
+---
+
+# 🔹 STEP 6: `requirements.txt`
+
+```txt
+numpy
+scikit-learn
