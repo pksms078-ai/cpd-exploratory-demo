@@ -30,4 +30,27 @@ def encode_sequence(sequence: str) -> np.ndarray:
         counts /= len(sequence)
 
     return counts
+import numpy as np
+
+AMINO_ACIDS = "ACDEFGHIKLMNPQRSTVWY"
+
+def encode_sequence(sequence: str) -> np.ndarray:
+    """
+    Simple numeric encoding of amino acid sequence.
+    Each amino acid mapped to an integer index.
+    """
+    encoding = []
+    for aa in sequence:
+        if aa not in AMINO_ACIDS:
+            raise ValueError(f"Invalid amino acid: {aa}")
+        encoding.append(AMINO_ACIDS.index(aa))
+    return np.array(encoding, dtype=np.float32)
+
+def pad_sequence(encoded_seq, max_len=50):
+    """
+    Pad or truncate sequence to fixed length.
+    """
+    if len(encoded_seq) >= max_len:
+        return encoded_seq[:max_len]
+    return np.pad(encoded_seq, (0, max_len - len(encoded_seq)))
 
