@@ -37,4 +37,25 @@ class ProteinSequenceModel:
 
         X = np.array([encode_sequence(s) for s in sequences])
         return self.model.predict(X)
+import numpy as np
+from sklearn.ensemble import RandomForestRegressor
+
+class SequenceScoringModel:
+    """
+    Lightweight ML model to score protein sequences.
+    This does NOT claim biological accuracy.
+    It demonstrates computational prioritization.
+    """
+
+    def __init__(self):
+        self.model = RandomForestRegressor(
+            n_estimators=50,
+            random_state=42
+        )
+
+    def train(self, X, y):
+        self.model.fit(X, y)
+
+    def predict(self, X):
+        return self.model.predict(X)
 
