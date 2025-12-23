@@ -2,9 +2,9 @@ name: Python application (CPD Demo)
 
 on:
   push:
-    branches: [ "SRC" ]
+    branches: ["SRC"]
   pull_request:
-    branches: [ "SRC" ]
+    branches: ["SRC"]
 
 jobs:
   build:
@@ -20,25 +20,18 @@ jobs:
           python-version: "3.10"
 
       - name: Upgrade pip
-        run: |
-          python -m pip install --upgrade pip
+        run: python -m pip install --upgrade pip
 
-      - name: Install test dependencies
+      - name: Install dependencies
         run: |
           pip install flake8 pytest
-
-      - name: Install CPD demo package
-        run: |
           pip install -e .
 
-      - name: Lint with flake8
-        run: |
-          flake8 src || true
+      - name: Lint
+        run: flake8 src || true
 
       - name: Run tests
-        run: |
-          pytest || true
+        run: pytest || true
 
       - name: Run runtime benchmark
-        run: |
-          python benchmarks/runtime_benchmark.py
+        run: python benchmarks/runtime_benchmark.py
