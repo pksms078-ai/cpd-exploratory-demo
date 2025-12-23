@@ -1,25 +1,20 @@
 import time
-import random
-import string
+import numpy as np
+import matplotlib.pyplot as plt
 
-def random_sequence(length=50):
-    amino_acids = "ACDEFGHIKLMNPQRSTVWY"
-    return "".join(random.choice(amino_acids) for _ in range(length))
-
-def simulate_pipeline(seq):
-    time.sleep(0.01)   # ML stage
-    time.sleep(0.02)   # Structural stage
-
-def benchmark(n_sequences):
-    sequences = [random_sequence() for _ in range(n_sequences)]
+def run_test(n):
     start = time.time()
-    for seq in sequences:
-        simulate_pipeline(seq)
-    end = time.time()
-    return end - start
+    _ = np.random.rand(n, 20)
+    time.sleep(0.01)
+    return time.time() - start
 
-if __name__ == "__main__":
-    for n in [10, 50, 100]:
-        t = benchmark(n)
-        print(f"{n} sequences → {t:.2f} seconds")
+sizes = [10, 100]
+times = [run_test(n) for n in sizes]
 
+plt.plot(sizes, times, marker='o')
+plt.xlabel("Number of sequences")
+plt.ylabel("Runtime (seconds)")
+plt.title("Runtime Benchmark (Exploratory)")
+plt.savefig("benchmark.png")
+
+print("Benchmark completed:", dict(zip(sizes, times)))
