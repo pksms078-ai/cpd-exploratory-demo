@@ -1,3 +1,4 @@
+Fix GitHub Actions workflow syntax
 name: Python application (CPD Demo)
 
 on:
