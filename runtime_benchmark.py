@@ -1,16 +1,12 @@
 import time
-import random
+import numpy as np
 
-def simulate_design(n_sequences: int):
-    results = []
-    for _ in range(n_sequences):
-        time.sleep(0.01)  # dummy compute
-        results.append(random.random())
-    return results
+def dummy_design(n):
+    time.sleep(0.01 * n)
+    return np.random.rand(n, 10)
 
 if __name__ == "__main__":
     for n in [10, 100]:
         start = time.time()
-        simulate_design(n)
-        elapsed = time.time() - start
-        print(f"Sequences: {n} | Runtime: {elapsed:.3f} seconds")
+        dummy_design(n)
+        print(f"{n} sequences runtime: {time.time() - start:.3f}s")
