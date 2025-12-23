@@ -39,11 +39,6 @@ jobs:
         run: |
           pytest || true
 
-          git add .github/workflows/python-app.yml
-git commit -m "Fix GitHub Actions workflow syntax"
-git push origin SRC
-
-
       - name: Run runtime benchmark
         run: |
           python benchmarks/runtime_benchmark.py
