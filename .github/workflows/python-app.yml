@@ -42,3 +42,6 @@ jobs:
       - name: Run runtime benchmark
         run: |
           python benchmarks/runtime_benchmark.py
+
+          Fix GitHub Actions workflow syntax
+
