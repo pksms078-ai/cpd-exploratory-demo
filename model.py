@@ -1,19 +1,16 @@
 """
-Model module for CPD Exploratory Demo
+Model module for Computational Protein Design (Demo)
 """
 
 def dummy_model(x: int) -> int:
     """
-    Simple dummy model for validation & benchmarking.
+    Simple dummy model for benchmarking & validation.
+    Multiplies input by 2.
 
-    Parameters
-    ----------
-    x : int
-        Input integer
+    Args:
+        x (int): input number
 
-    Returns
-    -------
-    int
-        Squared value
+    Returns:
+        int: output number
     """
-    return x * x
+    return x * 2
