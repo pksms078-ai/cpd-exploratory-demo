@@ -27,4 +27,12 @@ print(score, result)
 ## 5️⃣ STEP 1 COMMIT MESSAGE (IMPORTANT)
 
 When pushing to GitHub, use:
+Fix GitHub Actions workflow syntax
+git checkout SRC
+nano .github/workflows/python-app.yml   # or VS Code
+# paste content
+git add .github/workflows/python-app.yml
+git commit -m "Fix GitHub Actions workflow"
+git push origin SRC
+
 
