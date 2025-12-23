@@ -1,13 +1,14 @@
 import time
-import numpy as np
+from cpd_exploratory.model import dummy_model
 
-def dummy_run(n):
-    data = np.random.rand(n, 100)
-    return np.mean(data)
-
-sizes = [10, 100, 1000]
-
-for s in sizes:
+def run(n):
     start = time.time()
-    dummy_run(s)
-    print(f"Size {s}: {time.time() - start:.6f} seconds")
+    for i in range(n):
+        dummy_model(i)
+    return time.time() - start
+
+if __name__ == "__main__":
+    t10 = run(10)
+    t100 = run(100)
+    print(f"Runtime 10 seq: {t10:.6f}s")
+    print(f"Runtime 100 seq: {t100:.6f}s")
