@@ -1,20 +1,16 @@
 import time
-import numpy as np
-import matplotlib.pyplot as plt
+import random
 
-def run_test(n):
-    start = time.time()
-    _ = np.random.rand(n, 20)
-    time.sleep(0.01)
-    return time.time() - start
+def simulate_design(n_sequences: int):
+    results = []
+    for _ in range(n_sequences):
+        time.sleep(0.01)  # dummy compute
+        results.append(random.random())
+    return results
 
-sizes = [10, 100]
-times = [run_test(n) for n in sizes]
-
-plt.plot(sizes, times, marker='o')
-plt.xlabel("Number of sequences")
-plt.ylabel("Runtime (seconds)")
-plt.title("Runtime Benchmark (Exploratory)")
-plt.savefig("benchmark.png")
-
-print("Benchmark completed:", dict(zip(sizes, times)))
+if __name__ == "__main__":
+    for n in [10, 100]:
+        start = time.time()
+        simulate_design(n)
+        elapsed = time.time() - start
+        print(f"Sequences: {n} | Runtime: {elapsed:.3f} seconds")
