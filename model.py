@@ -1,5 +1,4 @@
-# src/cpd_exploratory/model.py
-
+cat > src/cpd_exploratory/model.py << 'EOF'
 def dummy_model(x: int) -> int:
     """
     Dummy model for benchmarking and pipeline validation.
@@ -9,4 +8,4 @@ def dummy_model(x: int) -> int:
 
 if __name__ == "__main__":
     print(dummy_model(5))
-
+EOF
