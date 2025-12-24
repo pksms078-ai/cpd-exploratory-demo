@@ -1,6 +1,8 @@
-import cpd_exploratory
+from cpd_exploratory.model import dummy_model
 
-def test_package_imports():
-    assert cpd_exploratory is not None
+def test_dummy_model():
+    assert dummy_model(5) == 5
+
+
 
 
