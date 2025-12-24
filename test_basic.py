@@ -4,7 +4,4 @@ def test_pytest_is_working():
     assert 1 + 1 == 2
 
 def test_dummy_model():
-    assert dummy_model(3) == 6
-
-
-
+    assert dummy_model(4) == 16
