@@ -1,7 +1,7 @@
 cat > src/cpd_exploratory/model.py << 'EOF'
 def dummy_model(x: int) -> int:
     """
-    Dummy model for benchmarking and pipeline validation.
+    Dummy_model for benchmarking and pipeline validation.
     """
     return x * x
 
