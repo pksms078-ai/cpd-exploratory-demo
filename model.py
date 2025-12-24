@@ -17,3 +17,5 @@ def dummy_model(x: int) -> int:
 if __name__ == "__main__":
     print(dummy_model(5))
 EOF
+def dummy_model(x):
+    return x * 2
