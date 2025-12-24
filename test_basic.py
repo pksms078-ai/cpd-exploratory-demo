@@ -1,5 +1,4 @@
-from cpd_demo import encode_sequence
+from cpd_exploratory.model import dummy_model
 
-def test_encoding():
-    vec = encode_sequence("ACD")
-    assert len(vec) == 20
+def test_dummy_model_basic():
+    assert dummy_model(5) == 25
