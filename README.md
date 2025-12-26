@@ -25,6 +25,11 @@ print(score, result)
 ---
 
 ## 5️⃣ STEP 1 COMMIT MESSAGE (IMPORTANT)
+## Computational Protein Change Point Detection (CPD)
+
+![CPD Overview]
+
+https://github.com/pksms078-ai/cpd-exploratory-demo
 
 When pushing to GitHub, use:
 Fix GitHub Actions workflow syntax
